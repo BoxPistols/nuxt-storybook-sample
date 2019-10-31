@@ -21,3 +21,26 @@ $ npm run generate
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
+
+
+---
+
+# Document
+
+`config.js`
+
+```js
+import { configure } from '@storybook/vue'
+
+// Bad! has Error ↓
+// const req = require.context("../stories", true, /.stories\.js$/)
+// const loadStories = req.keys().forEach(req)
+
+// OK!
+function loadStories() {
+  const req = require.context('../stories', true, /\.js$/);
+  req.keys().forEach(filename => req(filename));
+}
+
+configure(loadStories, module)
+```
