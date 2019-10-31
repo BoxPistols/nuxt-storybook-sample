@@ -1,6 +1,6 @@
 import { configure } from '@storybook/vue'
 
-// stories/*.stories.jsを読み込む
+// Bad! has Error
 // const req = require.context("../stories", true, /.stories\.js$/)
 // const loadStories = req.keys().forEach(req)
 
